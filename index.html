@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tyler Ceramics Countdown Clock</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <!-- Import Kilnshed Project from Adobe Fonts -->
+    <link rel="stylesheet" href="https://use.typekit.net/bev2ikc.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="dashboard-header">
+    </header>
+
+
+    <main class="dashboard-main">
+        <label for="cutoff">Cutoff: </label>
+        <input class="cutoff" type="datetime-local" id="cutoff" name="cutoff"
+        value="2024-10-07T00:00" min="2024-10-07T00:00" max="2025-10-14T00:00" />
+        <p>Time Remaining for Glazing Work:</p>
+        <h2 id="countdown"></h2>
+    </main>
+
+    <footer class="dashboard-footer">
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
