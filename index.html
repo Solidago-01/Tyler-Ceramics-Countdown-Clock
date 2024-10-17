@@ -3,28 +3,28 @@
 
 <head>
     <title>Tyler Ceramics Countdown Clock</title>
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.png">
-    <!-- Import Kilnshed Project from Adobe Fonts -->
+    <!-- Import Countdown Project from Adobe Fonts -->
     <link rel="stylesheet" href="https://use.typekit.net/bev2ikc.css">
+    <!-- Import CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header class="dashboard-header">
+    <header>
+        <p id="menu-button">&#9776</p>
     </header>
 
-
-    <main class="dashboard-main">
-        <label for="cutoff">Cutoff: </label>
-        <input class="cutoff" type="datetime-local" id="cutoff" name="cutoff"
-        value="2024-10-07T00:00" min="2024-10-07T00:00" max="2025-10-14T00:00" />
-        <p>Time Remaining for Glazing Work:</p>
-        <h2 id="countdown"></h2>
+    <main>
+        <div class="date-time-container">
+            <!-- <label for="cutoff">The cutoff is: </label> -->
+             <p id="message-1">The cutoff is:</p>
+            <input class="cutoff" type="datetime-local" id="cutoff" name="cutoff" min="2024-10-07T00:00" max="2025-10-14T00:00"/>
+        </div>
+        <p id="message-2">Time Remaining for Glazing Work:</p>
+        <h1 id="countdown"></h1>
     </main>
-
-    <footer class="dashboard-footer">
-    </footer>
-
     <script src="main.js"></script>
 </body>
 </html>

@@ -1,12 +1,14 @@
-// // Sidebar Button Handler
-// const resize_button = document.getElementById("resize");
+//Menu Button
+const menu_button = document.getElementById("menu-button");
 
-// resize_button.addEventListener("click", function(e) {
-//     e.preventDefault();
-//     document.body.classList.toggle("sb-expand");
-// });
+menu_button.addEventListener("click", function() {
+    console.log("clicked");
+});
 
-// Update min date/time in input field to current 
+// Menu
+// 
+
+// Update min & max datetime for input field from current datetime
 function update_date_time_min() {
     let current = new Date();
     let current_year = current.getFullYear();
@@ -16,12 +18,12 @@ function update_date_time_min() {
     let current_hours = current.getHours().toString().padStart(2,"0");
     let current_minutes = current.getMinutes().toString().padStart(2,"0");
     let min_day_time = (current_year+"-"+current_adjusted_month+"-"+current_day+"T"+current_hours+":"+current_minutes);
-    document.getElementById("cutoff").value = min_day_time;
     document.getElementById("cutoff").min = min_day_time;
-}
-update_date_time_min();
-
-
+    let future_year = current.getFullYear() + 1;
+    let max_day_time = (future_year+"-"+current_adjusted_month+"-"+current_day+"T"+current_hours+":"+current_minutes);
+    document.getElementById("cutoff").max = max_day_time;
+}   
+// Countdown Clock Handler
 function update_countdown_clock() {
 
     let user_input = new Date(document.getElementById("cutoff").value);
@@ -59,4 +61,6 @@ function update_countdown_clock() {
     }
 }
 
+// Event Handler
+update_date_time_min();
 setInterval(update_countdown_clock, 1000);
