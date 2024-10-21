@@ -10,10 +10,15 @@ body {
 p#menu-button {
     background: transparent;
     color: white;
-    border: none;  
-    font-size: 25px;
+    border: 2px solid white; 
+    border-radius: 4px; 
+    font-size: 16px;
     max-width: fit-content;
     padding: 0 10px;
+}
+
+p#menu-button:hover {
+    cursor: pointer;
 }
 
 main {

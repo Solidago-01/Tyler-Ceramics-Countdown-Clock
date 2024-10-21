@@ -1,12 +1,25 @@
 //Menu Button
-const menu_button = document.getElementById("menu-button");
+// const menu_button = document.getElementById("menu-button");
 
-menu_button.addEventListener("click", function() {
-    console.log("clicked");
-});
+// menu_button.addEventListener("click", function() {
+//     console.log("clicked")
+//     if (menu_button.innerText == "options") {
+//       menu_button.innerText = "X";
+//     } else {
+//       menu_button.innerText = "options";
+//     };
+// });
 
 // Menu
 // 
+// function myFunction() {
+//     var x = document.getElementById("myDIV");
+//     if (x.innerHTML === "Hello") {
+//       x.innerHTML = "Swapped text!";
+//     } else {
+//       x.innerHTML = "Hello";
+//     }
+//   } 
 
 // Update min & max datetime for input field from current datetime
 function update_date_time_min() {
@@ -19,6 +32,7 @@ function update_date_time_min() {
     let current_minutes = current.getMinutes().toString().padStart(2,"0");
     let min_day_time = (current_year+"-"+current_adjusted_month+"-"+current_day+"T"+current_hours+":"+current_minutes);
     document.getElementById("cutoff").min = min_day_time;
+    document.getElementById("cutoff").value = min_day_time;
     let future_year = current.getFullYear() + 1;
     let max_day_time = (future_year+"-"+current_adjusted_month+"-"+current_day+"T"+current_hours+":"+current_minutes);
     document.getElementById("cutoff").max = max_day_time;
