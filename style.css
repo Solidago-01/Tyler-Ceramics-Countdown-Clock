@@ -1,10 +1,12 @@
+/* For Extra Large Displays, TV's, Projector */
+/* ///////////////////////////////////////// */
+
 body {
     font-family: monospace;
     font-size: 1rem;
     line-height: 1.7;
     color: white;
     background: radial-gradient(circle, rgba(13,8,32,1) 0%, rgba(73,16,35,1) 100%);
-
 }
 
 p#menu-button {
@@ -15,6 +17,7 @@ p#menu-button {
     font-size: 1rem;
     max-width: fit-content;
     padding: 0 10px;
+    margin: 16px 10px;
 }
 
 p#menu-button:hover {
@@ -30,6 +33,7 @@ main {
 
 p {
     margin: 5px;
+    font-size: 1.75rem;
 }
 
 input {
@@ -41,20 +45,65 @@ input {
     background-color: transparent;
     accent-color: white;
     display: none;
+    font-size: 1.75rem;
 }
 
 input#message-1-input {
-    width: 140px;
+    width: 240px;
 }
 
 input#message-2-input {
-    width: 280px;
+    width: 320px;
 }
 
 h1 {
     font-family: "modern-love", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 80px;
+    font-size: 180px;
     margin: 5px 0;
 }
+
+
+/* Desktop, between 900-1440 */
+/* //////////////////////////*/
+@media only screen and (max-width: 1440px) {
+
+    h1 {
+        font-size: 120px;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    input {
+        font-size: 1.5rem;
+    }
+} 
+
+/* Tablet, between 600-990 */
+/* /////////////////////// */
+@media only screen and (max-width: 1000px) {
+
+    h1 {
+        font-size: 70px;
+    }
+
+    p {
+        font-size: 1.25rem;
+    }
+
+    input {
+        font-size: 1.25rem;
+    }
+} 
+
+/* Phone & Handheld, between -600 */
+/* ////////////////////////////// */
+@media only screen and (max-width: 600px) {
+
+    h1 {
+        font-size: 45px;
+    }
+} 
