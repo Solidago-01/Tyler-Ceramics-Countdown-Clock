@@ -1,3 +1,4 @@
+
 //Menu Button
 // const menu_button = document.getElementById("menu-button");
 
@@ -23,6 +24,7 @@
 
 // Update min & max datetime for input field from current datetime
 function update_date_time_min() {
+    // Reformat current date and time
     let current = new Date();
     let current_year = current.getFullYear();
     let current_month = current.getMonth() + 1;
@@ -31,10 +33,14 @@ function update_date_time_min() {
     let current_hours = current.getHours().toString().padStart(2,"0");
     let current_minutes = current.getMinutes().toString().padStart(2,"0");
     let min_day_time = (current_year+"-"+current_adjusted_month+"-"+current_day+"T"+current_hours+":"+current_minutes);
-    document.getElementById("cutoff").min = min_day_time;
-    document.getElementById("cutoff").value = min_day_time;
     let future_year = current.getFullYear() + 1;
     let max_day_time = (future_year+"-"+current_adjusted_month+"-"+current_day+"T"+current_hours+":"+current_minutes);
+    let starting_value = (current_year+"-"+current_adjusted_month+"-"+(Number(current_day)+1)+"T"+current_hours+":"+current_minutes);
+    console.log(Number(current_day)+1);
+    console.log(starting_value);
+    // Set values for HTML input field
+    document.getElementById("cutoff").min = min_day_time;
+    document.getElementById("cutoff").value = starting_value;
     document.getElementById("cutoff").max = max_day_time;
 }   
 // Countdown Clock Handler

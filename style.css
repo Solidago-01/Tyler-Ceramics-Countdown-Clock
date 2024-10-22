@@ -12,7 +12,7 @@ p#menu-button {
     color: white;
     border: 2px solid white; 
     border-radius: 4px; 
-    font-size: 16px;
+    font-size: 1rem;
     max-width: fit-content;
     padding: 0 10px;
 }
@@ -28,12 +28,27 @@ main {
     min-height: 80vh;
 }
 
-div.date-time-container {
-    margin: 20px auto;
+p {
+    margin: 5px;
 }
 
-p {
-    margin: 0;
+input#message-1-input {
+    background-color: transparent;
+    color: white;
+    width: 140px;
+    border-radius: 4px;
+    font-family: monospace; 
+    font-size: 1rem;
+    accent-color: white;
+}
+
+input#cutoff.cutoff {
+    display: block;
+    margin: auto;
+    background-color: transparent;
+    color: white;
+    border-radius: 4px;
+    font-size: 1rem;
 }
 
 h1 {
@@ -42,4 +57,14 @@ h1 {
     font-style: normal;
     font-size: 80px;
     margin: 5px 0;
+}
+
+input#message-2-input {
+    background-color: transparent;
+    color: white;
+    width: 280px;
+    border-radius: 4px;
+    font-family: monospace; 
+    font-size: 1rem;
+    accent-color: white;
 }
