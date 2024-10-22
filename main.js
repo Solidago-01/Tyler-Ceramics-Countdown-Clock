@@ -1,10 +1,13 @@
+// Edit and Save Button Functions
 function update_messages_and_datetime() {
   let message_one_input = document.getElementById("message-1-input");
   document.getElementById("message-1").innerHTML = message_one_input.value;
-  let datetime_input = document.getElementById("cutoff");
-  document.getElementById("cutoff-datetime-text").innerHTML = datetime_input.value;
   let message_two_input = document.getElementById("message-2-input");
   document.getElementById("message-2").innerHTML = message_two_input.value;
+  
+  let datetime_input = document.getElementById("cutoff").value;
+  let current_user_datetime = new Date(datetime_input).toString();
+  document.getElementById("cutoff-datetime-text").innerHTML = current_user_datetime.split('GMT')[0];
 }
 
 function make_input_fields_invisible() {
@@ -47,7 +50,7 @@ menu_button.addEventListener("click", function() {
 });
 
 // Update min & max datetime for input field from current datetime
-function update_date_time_min() {
+function update_datetime_min_max_and_value() {
     // Reformat current date and time
     let current = new Date();
     let current_year = current.getFullYear();
@@ -104,6 +107,8 @@ function update_countdown_clock() {
     }
 }
 
-// Event Handler
-update_date_time_min();
+// On Load
+update_datetime_min_max_and_value();
+update_messages_and_datetime();
+// On Loop
 setInterval(update_countdown_clock, 1000);
