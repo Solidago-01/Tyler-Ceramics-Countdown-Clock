@@ -1,26 +1,50 @@
+function update_messages_and_datetime() {
+  let message_one_input = document.getElementById("message-1-input");
+  document.getElementById("message-1").innerHTML = message_one_input.value;
+  let datetime_input = document.getElementById("cutoff");
+  document.getElementById("cutoff-datetime-text").innerHTML = datetime_input.value;
+  let message_two_input = document.getElementById("message-2-input");
+  document.getElementById("message-2").innerHTML = message_two_input.value;
+}
 
-//Menu Button
-// const menu_button = document.getElementById("menu-button");
+function make_input_fields_invisible() {
+  document.getElementById("message-1-input").style.display = "none";
+  document.getElementById("message-2-input").style.display = "none";
+  document.getElementById("cutoff").style.display = "none";
+}
 
-// menu_button.addEventListener("click", function() {
-//     console.log("clicked")
-//     if (menu_button.innerText == "options") {
-//       menu_button.innerText = "X";
-//     } else {
-//       menu_button.innerText = "options";
-//     };
-// });
+function make_input_fields_visible() {
+  document.getElementById("message-1-input").style.display = "block";
+  document.getElementById("message-2-input").style.display = "block";
+  document.getElementById("cutoff").style.display = "block";
+}
 
-// Menu
-// 
-// function myFunction() {
-//     var x = document.getElementById("myDIV");
-//     if (x.innerHTML === "Hello") {
-//       x.innerHTML = "Swapped text!";
-//     } else {
-//       x.innerHTML = "Hello";
-//     }
-//   } 
+function make_message_fields_invisible() {
+  document.getElementById("message-1").style.display = "none";
+  document.getElementById("message-2").style.display = "none";
+  document.getElementById("cutoff-datetime-text").style.display = "none";
+}
+
+function make_message_fields_visible() {
+  document.getElementById("message-1").style.display = "block";
+  document.getElementById("message-2").style.display = "block";
+  document.getElementById("cutoff-datetime-text").style.display = "block";
+}
+
+//Edit and Save Button
+const menu_button = document.getElementById("menu-button");
+menu_button.addEventListener("click", function() {
+    if (menu_button.innerText == "edit") {
+      menu_button.innerText = "save";
+      make_input_fields_visible();
+      make_message_fields_invisible();
+    } else {
+      menu_button.innerText = "edit";
+      update_messages_and_datetime();
+      make_input_fields_invisible();
+      make_message_fields_visible();
+    };
+});
 
 // Update min & max datetime for input field from current datetime
 function update_date_time_min() {
@@ -36,8 +60,7 @@ function update_date_time_min() {
     let future_year = current.getFullYear() + 1;
     let max_day_time = (future_year+"-"+current_adjusted_month+"-"+current_day+"T"+current_hours+":"+current_minutes);
     let starting_value = (current_year+"-"+current_adjusted_month+"-"+(Number(current_day)+1)+"T"+current_hours+":"+current_minutes);
-    console.log(Number(current_day)+1);
-    console.log(starting_value);
+    
     // Set values for HTML input field
     document.getElementById("cutoff").min = min_day_time;
     document.getElementById("cutoff").value = starting_value;
